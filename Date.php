@@ -1,5 +1,4 @@
 <?php
-
 	class Date
 	{
 		public function __construct($date = null)
@@ -9,7 +8,6 @@
 			} else {
 				$this->date = date('Y-m-d', time());
 			}
-
 			// если дата не передана - пусть берется текущая
 		}
 		public function getDay()
@@ -31,7 +29,6 @@
         	if (empty($lang)) {
             	return date('m', strtotime($this->date));
         	}
-
         	if ($lang == 'ru') {
             	return $ruMonths[$dateMonth];
         	}
@@ -50,7 +47,6 @@
 			// возвращает день недели
 			// переменная $lang может принимать значение ru или en
 			// если эта не пуста - пусть месяц будет словом на заданном языке
-
 			$daysRu =  [1 => 'Понедельник' , 'Вторник' , 'Среда' , 'Четверг' , 'Пятница' , 'Суббота' , 'Воскресенье'] ;
         	$daysEn =  [1 => 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
         	$dateDay = date('w', strtotime($this->date));
@@ -58,7 +54,6 @@
         	if (empty($lang)) {
             	return date('w', strtotime($this->date));
         	}
-        
         	if ($lang == 'ru') {
             	return $daysRu[$dateDay];
         	}
@@ -128,7 +123,6 @@
 			// выведет дату в формате 'год-месяц-день'
 		}
 	}
-	
 	$date = new Date('2025-12-31');
 	
 	echo $date->getYear();  // выведет '2025'
@@ -141,7 +135,4 @@
 
 	echo (new Date('2025-12-31'))->addYear(1); // '2026-12-31'
 	echo (new Date('2025-12-31'))->addDay(1);  // '2026-01-01'
-	
-	
-	
 ?>

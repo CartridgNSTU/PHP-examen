@@ -1,5 +1,5 @@
 <?php
-require_once 'Tag.php';
+require_once 'tag.php';
 
 	class Image extends Tag
 	{
